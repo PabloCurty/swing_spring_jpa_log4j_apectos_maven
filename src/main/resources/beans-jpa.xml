@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:context="http://www.springframework.org/schema/context" 
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+             http://www.springframework.org/schema/beans/spring-beans.xsd 
+             http://www.springframework.org/schema/context 
+             http://www.springframework.org/schema/context/spring-context.xsd 
+             http://www.springframework.org/schema/tx
+             http://www.springframework.org/schema/tx/spring-tx.xsd">      
+
+	<!-- <context:component-scan base-package="app"></context:component-scan>-->
+	 <bean id="deptAppService" class="app.service.DeptAppService">
+        <property name="deptDao" ref="deptDAOImpl" />
+	</bean>
+
+	<bean id="empAppService" class="app.service.EmpAppService">
+        <property name="deptDao" ref="deptDAOImpl" />
+        <property name="empDao" ref="empDAOImpl" />
+	</bean>
+	
+	<bean id="deptDAOImpl" class="app.dao.controle.FabricaDeDao" factory-method="getDao">
+		<constructor-arg value="app.dao.impl.DeptDaoImpl" />
+    </bean>
+	
+	<bean id="empDAOImpl" class="app.dao.controle.FabricaDeDao" factory-method="getDao">
+		<constructor-arg value="app.dao.impl.EmpDaoImpl" />
+    </bean> 
+
+<!--  
+    Acrescentando o elemento abaixo será registrado automaticamente um bean do tipo 
+    PersistenceAnnotationBeanPostProcessor que ficará responsável por injetar um 
+    EntityManager diferente, a cada nova transação, nas classes do tipo DAO que 
+    utilizam a anotação @PersistenceContext.
+
+    Anotamos com @Autowired a variável de instância protected da classe JPADAOGenerico. 
+    Como todos os DAOs estendem esssa classe essa variável protected estará disponível 
+    para todos eles. 
+-->
+    <context:annotation-config />
+
+<!-- Spring provê um fábrica denominada LocalEntityManagerFactoryBean, para que se possa criar
+     um objeto entity manager factory no container IoC. É preciso especificar o nome da unidade
+     de persistência definida no arquivo de configuração da JPA.  -->
+
+    <bean id="entityManagerFactory"
+          class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
+        <property name="persistenceUnitName" value="teste" />
+    </bean>
+
+<!--  Aqui é preciso declarar uma JpaTransactionManager e habilitar o gerenciamento de transação
+      de forma declarativa com o elemento abaixo.
+ -->
+    <tx:annotation-driven />
+    
+    <bean id="transactionManager"
+        class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory" />
+    </bean>
+
+</beans>
