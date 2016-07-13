@@ -1,6 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" 
 		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+  		 					 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>br.com</groupId>
@@ -91,7 +92,40 @@
 	  <version>1.8.2</version>
     </dependency>
     
+    
+    <!-- javax -->
 	
+ 	<!-- https://mvnrepository.com/artifact/javax/javaee-api -->
+	<dependency>
+	    <groupId>javax</groupId>
+	    <artifactId>javaee-api</artifactId>
+	    <version>6.0</version>
+	</dependency>
+
+
+ 	<!-- https://mvnrepository.com/artifact/javax.ws.rs/javax.ws.rs-api -->
+	<dependency>
+	    <groupId>javax.ws.rs</groupId>
+	    <artifactId>javax.ws.rs-api</artifactId>
+	    <version>2.0</version>
+	</dependency>
+
+	
+	<!-- https://mvnrepository.com/artifact/javax.inject/javax.inject -->
+	<dependency>
+	    <groupId>javax.inject</groupId>
+	    <artifactId>javax.inject</artifactId>
+	    <version>1</version>
+	</dependency>
+
+	
+	<!-- https://mvnrepository.com/artifact/javax.enterprise/cdi-api -->
+	<dependency>
+	    <groupId>javax.enterprise</groupId>
+	    <artifactId>cdi-api</artifactId>
+	    <version>1.1-PRD</version>
+	</dependency>
+
   </dependencies>
   
 </project>
