@@ -46,7 +46,7 @@
 
     <bean id="entityManagerFactory"
           class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
-        <property name="persistenceUnitName" value="teste" />
+        <property name="persistenceUnitName" value="AngularJavaEEBackend" />
     </bean>
 
 <!--  Aqui é preciso declarar uma JpaTransactionManager e habilitar o gerenciamento de transação

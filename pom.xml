@@ -5,11 +5,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>br.com</groupId>
-  <artifactId>teste</artifactId>
+  <artifactId>AngularJavaEEBackend</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
 
-  <name>teste</name>
+  <name>AngularJavaEEBackend</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -17,8 +17,51 @@
   	<maven.compiler.source>1.8</maven.compiler.source>
   	<maven.compiler.target>1.8</maven.compiler.target>
   </properties>
+  
+  <build>
+  <plugins>
+		 <!--<sourceDirectory>src/main</sourceDirectory>
+		
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin> -->
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<warSourceDirectory>WebContent</warSourceDirectory>
+					<failOnMissingWebXml>true</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
   <dependencies>
+  
+  	<!-- javax  -->
+		<dependency>
+			<groupId>javax.ws.rs</groupId>
+			<artifactId>jsr311-api</artifactId>
+			<version>1.1.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-server</artifactId>
+			<version>1.18.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-servlet</artifactId>
+			<version>1.18.1</version>
+		</dependency>
+		
+
 
     <dependency>
       <groupId>corejava</groupId>
@@ -37,19 +80,7 @@
         <artifactId>spring-context</artifactId>
         <version>4.1.1.RELEASE</version>
     </dependency>
-<!--     
-     <dependency>
-	  <groupId>org.springframework</groupId>
-	  <artifactId>spring-core</artifactId>
-	  <version>4.1.1.RELEASE</version>
-    </dependency>
-      
-    <dependency>
-	  <groupId>org.springframework</groupId>
-	  <artifactId>spring-beans</artifactId>
-	  <version>4.1.1.RELEASE</version>
-    </dependency>
- -->
+
     <dependency>
 	  <groupId>org.springframework</groupId>
 	  <artifactId>spring-orm</artifactId>
@@ -73,18 +104,7 @@
       <artifactId>log4j</artifactId>
       <version>1.2.14</version>
     </dependency>
- 
-    <dependency>
-  	  <groupId>com.oracle</groupId>
-  	  <artifactId>ojdbc14</artifactId>
-  	  <version>1.0</version>
-    </dependency>
-    
-    <dependency>
-  	  <groupId>com.oracle</groupId>
-  	  <artifactId>ojdbc14</artifactId>
-  	  <version>1.0</version>
-    </dependency>
+
     
     <dependency>
 	  <groupId>org.aspectj</groupId>
@@ -92,23 +112,30 @@
 	  <version>1.8.2</version>
     </dependency>
     
+    <!-- oracle -->
+    <dependency>
+  	  <groupId>com.oracle</groupId>
+  	  <artifactId>ojdbc14</artifactId>
+  	  <version>1.0</version>
+    </dependency>
+    
     
     <!-- javax -->
 	
- 	<!-- https://mvnrepository.com/artifact/javax/javaee-api -->
+ 	<!-- https://mvnrepository.com/artifact/javax/javaee-api 
 	<dependency>
 	    <groupId>javax</groupId>
 	    <artifactId>javaee-api</artifactId>
 	    <version>6.0</version>
-	</dependency>
+	</dependency> -->
 
 
- 	<!-- https://mvnrepository.com/artifact/javax.ws.rs/javax.ws.rs-api -->
+ 	<!-- https://mvnrepository.com/artifact/javax.ws.rs/javax.ws.rs-api 
 	<dependency>
 	    <groupId>javax.ws.rs</groupId>
 	    <artifactId>javax.ws.rs-api</artifactId>
 	    <version>2.0</version>
-	</dependency>
+	</dependency> -->
 
 	
 	<!-- https://mvnrepository.com/artifact/javax.inject/javax.inject -->
@@ -119,13 +146,13 @@
 	</dependency>
 
 	
-	<!-- https://mvnrepository.com/artifact/javax.enterprise/cdi-api -->
+	<!-- https://mvnrepository.com/artifact/javax.enterprise/cdi-api 
 	<dependency>
 	    <groupId>javax.enterprise</groupId>
 	    <artifactId>cdi-api</artifactId>
 	    <version>1.1-PRD</version>
-	</dependency>
+	</dependency> -->
 
-  </dependencies>
+  </dependencies> 
   
 </project>
