@@ -54,7 +54,7 @@ public class EmpModel extends AbstractTableModel {
 	}
 
 	public void setNomeEmp(String nomeEmp) {
-		this.nomeEmp = nomeEmp;
+		this.nomeEmp = nomeEmp.toUpperCase() + "%";
 	}
 
 	public String getColumnName(int c) {
@@ -91,7 +91,7 @@ public class EmpModel extends AbstractTableModel {
 			if (cache.size() > (NUMERO_DE_LINHAS_POR_PAGINA * 3)) {
 				cache.clear();
 				if (rowIndex >= rowIndexAnterior) {
-					List<Emp> resultados = empService.recuperaEmpPeloNome(nomeEmp); 
+					List<Emp> resultados = empService.recuperaEPeloNome(nomeEmp, rowIndex - (NUMERO_DE_LINHAS_POR_PAGINA - 1), NUMERO_DE_LINHAS_POR_PAGINA * 2); //empService.recuperaEmpPeloNome(nomeEmp); 
 					int j = 0;
 					for (Emp emp : resultados) {
 						cache.put(rowIndex - (NUMERO_DE_LINHAS_POR_PAGINA - 1) + j, emp);
@@ -102,14 +102,14 @@ public class EmpModel extends AbstractTableModel {
 					if (inicio < 0)
 						inicio = 0;
 					int j = 0;
-					List<Emp> resultados = empService.recuperaEmpPeloNome(nomeEmp); 
+					List<Emp> resultados = empService.recuperaEPeloNome(nomeEmp, inicio, NUMERO_DE_LINHAS_POR_PAGINA * 2); //empService.recuperaEmpPeloNome(nomeEmp); 
 					for (Emp emp : resultados) {
 						cache.put(inicio + j, emp);
 						j++;
 					}
 				}
 			} else if (rowIndex >= rowIndexAnterior) {
-				List<Emp> resultados = empService.recuperaEmpPeloNome(nomeEmp); 
+				List<Emp> resultados = empService.recuperaEPeloNome(nomeEmp, rowIndex, NUMERO_DE_LINHAS_POR_PAGINA * 2); //empService.recuperaEmpPeloNome(nomeEmp); 
 				int j = 0;
 				for (Emp emp : resultados) {
 					cache.put(rowIndex + j, emp);
@@ -121,7 +121,7 @@ public class EmpModel extends AbstractTableModel {
 					inicio = 0;
 
 				int j = 0;
-				List<Emp> resultados = empService.recuperaEmpPeloNome(nomeEmp); 
+				List<Emp> resultados = empService.recuperaEPeloNome(nomeEmp, inicio, NUMERO_DE_LINHAS_POR_PAGINA * 2);  //empService.recuperaEmpPeloNome(nomeEmp); 
 				for (Emp emp : resultados) {
 					cache.put(inicio + j, emp);
 					j++;

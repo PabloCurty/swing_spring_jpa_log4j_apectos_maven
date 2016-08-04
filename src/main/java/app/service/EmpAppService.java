@@ -97,6 +97,10 @@ public class EmpAppService {
 	public List<Emp> recuperaEmpPeloNome(String nomeEmp) {
 		return empDao.recuperaEmpPeloNome(nomeEmp);
 	}
+	
+	public List<Emp> recuperaEPeloNome(String nomeEmp, int deslocamento, int linhasPag) {
+		return empDao.recuperaEPeloNome(nomeEmp, deslocamento, linhasPag);
+	}
 
 	public Emp recuperaUmFuncDeDept(Long valueAt) throws EmpNaoEncontradoException{
 		try{	

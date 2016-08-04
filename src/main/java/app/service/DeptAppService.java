@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.transaction.annotation.Transactional;
 
 import app.dao.DeptDAO;
-import app.dao.impl.DaoProvisorio;
 import app.model.Dept;
 import excecao.DepartamentoComFuncionarioException;
 import excecao.DepartamentoNaoEncontradoException;
@@ -19,9 +18,6 @@ import excecao.ObjetoNaoEncontradoException;
 public class DeptAppService {
 	
 	private DeptDAO deptDao = null;
-	
-	//TODO dao provisorio so para teste, retirar e colocar no jpaDaoGENERICO
-	private DaoProvisorio dao;
 
 	//@Autowired
 	public void setDeptDao(DeptDAO deptDao) {
@@ -78,9 +74,8 @@ public class DeptAppService {
 		return deptDao.recuperaDeptPeloNome(nome);
 	}
 	
-	//TODO dao provisorio so para teste, retirar e colocar no jpaDaoGENERICO
-	public List<Dept> recuperaPeloNome(String nome, int deslocamento, int linhasPorPagina){
-		dao = new DaoProvisorio();
-		return dao.recuperaPeloNome(nome, deslocamento, linhasPorPagina);
+	public List<Dept> recuperaDPeloNome(String nome, int deslocamento, int linhaPag  ){
+		return deptDao.recuperaDPeloNome(nome, deslocamento, linhaPag);
 	}
+	
 }

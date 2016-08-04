@@ -1,6 +1,7 @@
 package app.dao;
 
 import java.io.Serializable;
+import java.util.List;
 
 import org.springframework.transaction.annotation.Transactional;
 
@@ -27,4 +28,8 @@ public interface DaoGenerico<T, PK extends Serializable>
     T getPorId(PK id) throws ObjetoNaoEncontradoException;
 
     T getPorIdComLock(PK id) throws ObjetoNaoEncontradoException;
+    
+    List<T> recuperaDPeloNome(String nome, int deslocamento, int linhasPorPagina);
+    
+    List<T> recuperaEPeloNome(String nome, int deslocamento, int linhasPorPagina);
 }

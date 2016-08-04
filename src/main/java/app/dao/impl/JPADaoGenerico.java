@@ -65,7 +65,34 @@ public class JPADaoGenerico<T, PK extends Serializable> implements DaoGenerico<T
 		}
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public final List<T> recuperaEPeloNome(String nome, int deslocamento, int linhasPorPagina){
+		List<T> emps = em
+				.createQuery("select e from Emp e left outer join fetch e.deptno "
+						   + "where e.ename like :nome order by e.ename asc")
+				.setParameter("nome", nome.toUpperCase())
+				.setFirstResult(deslocamento)
+				.setMaxResults(linhasPorPagina)
+				.getResultList();
 
+			return emps;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public final List<T> recuperaDPeloNome(String nome, int deslocamento, int linhasPorPagina){	
+		List<T> depts = em
+			.createQuery("select d from Dept d "
+					   + "where d.nameDept like :nome order by d.nameDept asc")
+			.setParameter("nome", nome.toUpperCase())
+			.setFirstResult(deslocamento)
+			.setMaxResults(linhasPorPagina)
+			.getResultList();
+
+		return depts;
+	}
+	
 	public final T getPorId(PK id) throws ObjetoNaoEncontradoException {
 		T t = null;
 		try {
@@ -191,4 +218,6 @@ public class JPADaoGenerico<T, PK extends Serializable> implements DaoGenerico<T
 	private String getNomeDaBuscaPeloMetodo(Method metodo) {
 		return tipo.getSimpleName() + "." + metodo.getName();
 	}
+
+	
 }

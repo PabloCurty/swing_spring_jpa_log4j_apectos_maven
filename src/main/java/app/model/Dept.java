@@ -39,7 +39,7 @@ import javax.persistence.Table;
 			),
 			@NamedQuery
 			(	name = "Dept.recuperaDeptPeloNome",
-				query = "select d from Dept d where d.nameDept = ?1 order by d.id asc"
+				query = "select d from Dept d where d.nameDept like ?1 order by d.id asc"
 			)
 		})
 

@@ -47,7 +47,7 @@ public class DeptModel extends AbstractTableModel {
 	}
 
 	public void setNomeDept(String nomeDept) {
-		this.nomeDept = nomeDept;
+		this.nomeDept = nomeDept.toUpperCase()+"%";
 	}
 
 	public String getColumnName(int c) {
@@ -83,7 +83,7 @@ public class DeptModel extends AbstractTableModel {
 				cache.clear();
 				if (rowIndex >= rowIndexAnterior) {
 
-					List<Dept> resultados = deptService.recuperaDeptPeloNome(nomeDept); 
+					List<Dept> resultados = deptService.recuperaDPeloNome(nomeDept, rowIndex - (NUMERO_DE_LINHAS_POR_PAGINA - 1), NUMERO_DE_LINHAS_POR_PAGINA * 2); //deptService.recuperaDeptPeloNome(nomeDept); 
 					int j = 0;
 					for (Dept dept : resultados) {
 						cache.put(rowIndex - (NUMERO_DE_LINHAS_POR_PAGINA - 1) + j, dept);
@@ -94,14 +94,14 @@ public class DeptModel extends AbstractTableModel {
 					if (inicio < 0)
 						inicio = 0;
 					int j = 0;
-					List<Dept> resultados = deptService.recuperaDeptPeloNome(nomeDept); 
+					List<Dept> resultados = deptService.recuperaDPeloNome(nomeDept,inicio, NUMERO_DE_LINHAS_POR_PAGINA * 2); //deptService.recuperaDeptPeloNome(nomeDept); 
 					for (Dept dept : resultados) {
 						cache.put(inicio + j, dept);
 						j++;
 					}
 				}
 			} else if (rowIndex >= rowIndexAnterior) {
-				List<Dept> resultados = deptService.recuperaDeptPeloNome(nomeDept); 
+				List<Dept> resultados = deptService.recuperaDPeloNome(nomeDept,rowIndex, NUMERO_DE_LINHAS_POR_PAGINA * 2); //deptService.recuperaDeptPeloNome(nomeDept); 
 				int j = 0;
 				for (Dept dept : resultados) {
 					cache.put(rowIndex + j, dept);
@@ -113,7 +113,7 @@ public class DeptModel extends AbstractTableModel {
 					inicio = 0;
 
 				int j = 0;
-				List<Dept> resultados = deptService.recuperaDeptPeloNome(nomeDept); 
+				List<Dept> resultados = deptService.recuperaDPeloNome(nomeDept, inicio, NUMERO_DE_LINHAS_POR_PAGINA * 2); //deptService.recuperaDeptPeloNome(nomeDept); 
 				for (Dept dept : resultados) {
 					cache.put(inicio + j, dept);
 					j++;
