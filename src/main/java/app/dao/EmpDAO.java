@@ -3,6 +3,7 @@ package app.dao;
 import java.util.List;
 
 import anotacao.RecuperaLista;
+import anotacao.RecuperaObjeto;
 import anotacao.RecuperaUltimoOuPrimeiro;
 import app.model.Dept;
 import app.model.Emp;
@@ -22,4 +23,13 @@ public interface EmpDAO extends DaoGenerico<Emp, Long>{
 	@RecuperaUltimoOuPrimeiro
 	Emp recuperaUltimoFunc(Dept produto)
 		throws ObjetoNaoEncontradoException; 
+	
+	@RecuperaLista
+	List<Emp> recuperaFuncsDeDept(long deptNum);
+
+	@RecuperaLista
+	List<Emp> recuperaEmpPeloNome(String nomeEmp);
+
+	@RecuperaObjeto
+	Emp recuperaUmFuncDeDept(Long valueAt) throws ObjetoNaoEncontradoException;
 }

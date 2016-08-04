@@ -55,6 +55,16 @@ public class JPADaoGenerico<T, PK extends Serializable> implements DaoGenerico<T
 			throw new InfraestruturaException(e);
 		}
 	}
+	
+	public final void remove(T o) {
+		try {
+			o = em.merge(o);
+			em.remove(o);
+		} catch (RuntimeException e) {
+			throw new InfraestruturaException(e);
+		}
+	}
+
 
 	public final T getPorId(PK id) throws ObjetoNaoEncontradoException {
 		T t = null;

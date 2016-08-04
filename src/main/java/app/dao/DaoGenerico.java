@@ -20,6 +20,9 @@ public interface DaoGenerico<T, PK extends Serializable>
 
 	@Transactional
     void exclui(T obj);
+	
+	@Transactional
+	void remove(T obj);
 
     T getPorId(PK id) throws ObjetoNaoEncontradoException;
 

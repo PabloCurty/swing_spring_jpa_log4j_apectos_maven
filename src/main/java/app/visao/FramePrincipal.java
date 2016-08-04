@@ -49,9 +49,9 @@ public class FramePrincipal extends JFrame
 		menuItemEmp.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_E, ActionEvent.ALT_MASK)); // Diz a combinação necessaria para chamar os action listeners
 		menuItemEmp.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//DialogEmp dialogDept = new DialogEmp(frame);
-				//dialogEmp.novo();
-				//dialogEMo.setVisible(true);
+				DialogEmp dialogEmp = new DialogEmp(frame);
+				dialogEmp.novo();
+				dialogEmp.setVisible(true);
 			}
 		});
 		mnCadastrar.add(menuItemEmp);

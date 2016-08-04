@@ -16,41 +16,43 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import app.model.Dept;
+import app.model.Emp;
 import app.service.DeptAppService;
+import app.service.EmpAppService;
 import excecao.DepartamentoNaoEncontradoException;
+import excecao.EmpNaoEncontradoException;
 
 // Essa classe tem os seguintes métodos:
 // - getTableCellRendererComponent() - Método que renderiza o botão
 // - getTableCellEditorComponent() - Método que indica qual botão foi clicado
 // - actionPerformed() - Método listener do botão
-public class ButtonColumn extends AbstractCellEditor implements
+public class ButtonColumnEmp extends AbstractCellEditor implements
 		TableCellRenderer, TableCellEditor, ActionListener
 {
 	private static final long serialVersionUID = 1L;
 	private JTable table;
 	private JButton button;
-	private DialogTabelaDept dialogTabelaDept;
-	private DialogDept dialogDept;
+	private DialogTabelaEmp dialogTabelaEmp;
+	private DialogEmp dialogEmp;
 	
-	private static DeptAppService deptService;
+	private static EmpAppService empService;
 	
     static
     {
     	@SuppressWarnings("resource")
 		ApplicationContext fabrica = new ClassPathXmlApplicationContext("beans-jpa.xml");
 
-    	deptService = (DeptAppService)fabrica.getBean ("deptAppService");
+    	empService = (EmpAppService)fabrica.getBean ("empAppService");
     }
-
-	public ButtonColumn(JTable table, int coluna, 
-			DialogTabelaDept dialogTabelaDept, 
-			DialogDept dialogDept)
+	
+	public ButtonColumnEmp(JTable table, int coluna, 
+			DialogTabelaEmp dialogTabelaEmp, 
+			DialogEmp dialogEmp)
 	{
-		System.out.println("Construtor");
 		//super();
 		this.table = table;
-		this.dialogTabelaDept = dialogTabelaDept;
-		this.dialogDept = dialogDept;
+		this.dialogTabelaEmp = dialogTabelaEmp;
+		this.dialogEmp = dialogEmp;
 		
 		button = new JButton();
 		button.setText("Editar");
@@ -92,7 +94,7 @@ public class ButtonColumn extends AbstractCellEditor implements
 			boolean isSelected, int row, int column)
 	{
 		// IMPORTANTE
-		System.out.println("Clicou");
+		
 		// Quando um botão é clicado, esse método é executado, e em seguida o 
 		// listener do botão (actionPerformed()) é executado.
 		
@@ -110,18 +112,17 @@ public class ButtonColumn extends AbstractCellEditor implements
 	{
 		try
 		{
-			System.out.println("Entrou");
-			Dept umDept = deptService.getOneDept((Long)table
+			Emp umEmp = empService.recuperaUmFuncDeDept((Long)table
 				.getValueAt(table.getSelectedRow(), 0));
-			dialogDept.designaDepartamentoAFrame(umDept);
-			dialogDept.editavel();
-			dialogTabelaDept.dispose();
+			dialogEmp.designaEmpregadoAFrame(umEmp);
+			dialogEmp.editavel();
+			dialogTabelaEmp.dispose();
 		} 
-		catch (DepartamentoNaoEncontradoException e1)
+		catch (EmpNaoEncontradoException e1)
 		{ 
-			dialogDept.novo();
-			dialogTabelaDept.dispose();
-			JOptionPane.showMessageDialog(dialogDept, "Departamento não encontrado", "", JOptionPane.ERROR_MESSAGE);
+			dialogEmp.novo();
+			dialogTabelaEmp.dispose();
+			JOptionPane.showMessageDialog(dialogEmp, "Empregado não encontrado", "", JOptionPane.ERROR_MESSAGE);
 		}
 	}
 }

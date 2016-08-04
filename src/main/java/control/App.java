@@ -17,7 +17,7 @@ public class App {
 	public static void main(String[] args) {
 		
 		String name;
-		Double number;
+		Long number;
 		String location;
 		Dept oneDept;
 		
@@ -43,7 +43,7 @@ public class App {
 				case 1: {
 	
 					name = Console.readLine('\n' + "Enter the department name: ");
-					number = Console.readDouble("Enter the department number: ");
+					number = (long) Console.readInt("Enter the department number: ");
 					location = Console.readLine("Enter the department location: ");
 	
 					Dept dept = new Dept(number, name, location);
@@ -88,7 +88,7 @@ public class App {
 							break;
 						}
 						case 2:{
-							Double newNumber = Console.readDouble("Type new number");
+							Long newNumber = (long) Console.readInt("Type new number");
 							oneDept.setDeptno(newNumber);
 							try {
 								deptAppService.change(oneDept);

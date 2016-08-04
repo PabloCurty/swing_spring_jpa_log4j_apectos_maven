@@ -36,6 +36,10 @@ import javax.persistence.Table;
 			@NamedQuery
 			(	name = "Dept.recuperaConjuntoDeDeptEFunc",
 				query = "select d from Dept d left outer join fetch d.emps order by d.id asc"
+			),
+			@NamedQuery
+			(	name = "Dept.recuperaDeptPeloNome",
+				query = "select d from Dept d where d.nameDept = ?1 order by d.id asc"
 			)
 		})
 
@@ -52,7 +56,7 @@ public class Dept {
 	
 	@Basic(optional= false)
 	@Column(name = "DEPTNO")
-	private Double deptno;
+	private Long deptno;
 	
 	@Basic(optional= false)
 	@Column(name = "DNAME")
@@ -80,7 +84,7 @@ public class Dept {
 	 * @param deptno (department number)
 	 * @param nameDept (department name)
 	 */
-	public Dept(Double deptno, String nameDept) {
+	public Dept(Long deptno, String nameDept) {
 		super();
 		this.deptno = deptno;
 		this.nameDept = nameDept;
@@ -93,7 +97,7 @@ public class Dept {
 	 * @param nameDept (department name)
 	 * @param loc ( department location)
 	 */
-	public Dept(Double deptno, String nameDept, String loc) {
+	public Dept(Long deptno, String nameDept, String loc) {
 		super();
 		this.deptno = deptno;
 		this.nameDept = nameDept;
@@ -108,7 +112,7 @@ public class Dept {
 	 * @param loc ( department location)
 	 * @param emps (employers list)
 	 */
-	public Dept(Double deptno, String nameDept, String loc, List<Emp> emps) {
+	public Dept(Long deptno, String nameDept, String loc, List<Emp> emps) {
 		super();
 		this.deptno = deptno;
 		this.nameDept = nameDept;
@@ -127,11 +131,11 @@ public class Dept {
 		this.id = id;
 	}
 
-	public Double getDeptno() {
+	public Long getDeptno() {
 		return deptno;
 	}
 
-	public void setDeptno(Double deptno) {
+	public void setDeptno(Long deptno) {
 		this.deptno = deptno;
 	}
 

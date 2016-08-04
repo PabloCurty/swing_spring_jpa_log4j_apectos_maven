@@ -74,10 +74,8 @@ public class DeptAppService {
 	}
 	
 	
-	//TODO dao provisorio so para teste, retirar e colocar no jpaDaoGENERICO
-	public long recuperaQtdPeloNome(String nome){
-		dao = new DaoProvisorio();
-		return dao.recuperaQtdPeloNome(nome);
+	public List<Dept> recuperaDeptPeloNome(String nome){
+		return deptDao.recuperaDeptPeloNome(nome);
 	}
 	
 	//TODO dao provisorio so para teste, retirar e colocar no jpaDaoGENERICO

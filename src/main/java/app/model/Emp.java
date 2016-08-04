@@ -27,16 +27,20 @@ import util.Jobs;
  */
 @NamedQueries(
 		{	@NamedQuery
-			(	name = "Emp.recuperaListaDeLances",
+			(	name = "Emp.recuperaListaDeFunc",
 				query = "select e from Emp e order by e.id"
 			),
 			@NamedQuery
-			(	name = "Emp.recuperaUltimoLance",
+			(	name = "Emp.recuperaFuncsDeDept",
 				query = "select e from Emp e where e.deptno = ?1 order by e.id desc"
 			),
 			@NamedQuery
-			(	name = "Emp.recuperaUmLanceComProduto",
+			(	name = "Emp.recuperaUmFuncDeDept",
 				query = "select e from Emp e left outer join fetch e.deptno where e.id = ?1"
+			),
+			@NamedQuery
+			(	name = "Emp.recuperaEmpPeloNome",
+				query = "select e from Emp e left outer join fetch e.deptno where e.ename = ?1 order by e.id asc"
 			)
 		})
 
@@ -53,7 +57,7 @@ public class Emp {
 	
 	@Basic(optional= false)
 	@Column(name = "EMPNO")
-	private Short empno;
+	private Long empno;
 	
 	@Basic(optional= false)
 	@Column(name = "ENAME")
@@ -91,7 +95,7 @@ public class Emp {
 	 * @param hireDate (date when the employer was hire)
 	 * @param sal (value of the employer salary)
 	 */
-	public Emp(Short empno, String ename, Jobs job, Dept deptno, Date hireDate, BigDecimal sal) {
+	public Emp(Long empno, String ename, Jobs job, Dept deptno, Date hireDate, BigDecimal sal) {
 		super();
 		this.empno = empno;
 		this.ename = ename;
@@ -111,11 +115,11 @@ public class Emp {
 		this.id = id;
 	}
 
-	public Short getEmpno() {
+	public Long getEmpno() {
 		return empno;
 	}
 
-	public void setEmpno(Short empno) {
+	public void setEmpno(Long empno) {
 		this.empno = empno;
 	}
 

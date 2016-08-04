@@ -29,6 +29,9 @@ public interface DeptDAO extends DaoGenerico<Dept, Long>{
 
 	@RecuperaConjunto
 	Set<Dept> recuperaConjuntoDeDeptEFunc();
+
+	@RecuperaLista
+	List<Dept> recuperaDeptPeloNome(String nome);
 	
 	/* ****** not generic methods ******* */
 

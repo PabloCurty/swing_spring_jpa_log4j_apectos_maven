@@ -23,14 +23,14 @@ import excecao.DepartamentoNaoEncontradoException;
 // - getTableCellRendererComponent() - Método que renderiza o botão
 // - getTableCellEditorComponent() - Método que indica qual botão foi clicado
 // - actionPerformed() - Método listener do botão
-public class ButtonColumn extends AbstractCellEditor implements
+public class ButtonColumnDeEmpParaDept extends AbstractCellEditor implements
 		TableCellRenderer, TableCellEditor, ActionListener
 {
 	private static final long serialVersionUID = 1L;
 	private JTable table;
 	private JButton button;
 	private DialogTabelaDept dialogTabelaDept;
-	private DialogDept dialogDept;
+	private DialogEmp dialogEmp;
 	
 	private static DeptAppService deptService;
 	
@@ -42,18 +42,18 @@ public class ButtonColumn extends AbstractCellEditor implements
     	deptService = (DeptAppService)fabrica.getBean ("deptAppService");
     }
 
-	public ButtonColumn(JTable table, int coluna, 
+	public ButtonColumnDeEmpParaDept(JTable table, int coluna, 
 			DialogTabelaDept dialogTabelaDept, 
-			DialogDept dialogDept)
+			DialogEmp dialogEmp)
 	{
 		System.out.println("Construtor");
 		//super();
 		this.table = table;
 		this.dialogTabelaDept = dialogTabelaDept;
-		this.dialogDept = dialogDept;
+		this.dialogEmp = dialogEmp;
 		
 		button = new JButton();
-		button.setText("Editar");
+		button.setText("Usar ID");
 		button.addActionListener(this);
 
 		TableColumnModel tableColumnModel = table.getColumnModel();
@@ -113,15 +113,15 @@ public class ButtonColumn extends AbstractCellEditor implements
 			System.out.println("Entrou");
 			Dept umDept = deptService.getOneDept((Long)table
 				.getValueAt(table.getSelectedRow(), 0));
-			dialogDept.designaDepartamentoAFrame(umDept);
-			dialogDept.editavel();
+			dialogEmp.designaEmpregadoAFrame(umDept);
+			dialogEmp.migraDept();
 			dialogTabelaDept.dispose();
 		} 
 		catch (DepartamentoNaoEncontradoException e1)
 		{ 
-			dialogDept.novo();
+			dialogEmp.novo();
 			dialogTabelaDept.dispose();
-			JOptionPane.showMessageDialog(dialogDept, "Departamento não encontrado", "", JOptionPane.ERROR_MESSAGE);
+			JOptionPane.showMessageDialog(dialogEmp, "Departamento não encontrado", "", JOptionPane.ERROR_MESSAGE);
 		}
 	}
 }

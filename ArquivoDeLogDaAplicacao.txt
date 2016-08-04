@@ -1,0 +1,110 @@
+03/08/2016 23:49:11 org.springframework.context.support.AbstractApplicationContext prepareRefresh  INFO: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@13bb1383: startup date [Wed Aug 03 23:49:11 BRT 2016]; root of context hierarchy
+03/08/2016 23:49:11 org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions  INFO: Loading XML bean definitions from class path resource [beans-jpa.xml]
+03/08/2016 23:49:11 org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor <init>  INFO: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+03/08/2016 23:49:11 org.springframework.orm.jpa.LocalEntityManagerFactoryBean createNativeEntityManagerFactory  INFO: Building JPA EntityManagerFactory for persistence unit 'AngularJavaEEBackend'
+03/08/2016 23:49:12 org.hibernate.annotations.common.Version <clinit>  INFO: HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+03/08/2016 23:49:12 org.hibernate.Version logVersion  INFO: HHH000412: Hibernate Core {4.2.6.Final}
+03/08/2016 23:49:12 org.hibernate.cfg.Environment <clinit>  INFO: HHH000206: hibernate.properties not found
+03/08/2016 23:49:12 org.hibernate.cfg.Environment buildBytecodeProvider  INFO: HHH000021: Bytecode provider name : javassist
+03/08/2016 23:49:12 org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure  INFO: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+03/08/2016 23:49:12 org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure  INFO: HHH000115: Hibernate connection pool size: 20
+03/08/2016 23:49:12 org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure  INFO: HHH000006: Autocommit mode: true
+03/08/2016 23:49:12 org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure  INFO: HHH000401: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+03/08/2016 23:49:12 org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure  INFO: HHH000046: Connection properties: {user=JPA2, password=****, autocommit=true, release_mode=auto}
+03/08/2016 23:49:12 org.hibernate.dialect.Dialect <init>  INFO: HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+03/08/2016 23:49:12 org.hibernate.engine.jdbc.internal.LobCreatorBuilder useContextualLobCreation  INFO: HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+03/08/2016 23:49:12 org.hibernate.engine.transaction.internal.TransactionFactoryInitiator initiateService  INFO: HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+03/08/2016 23:49:12 org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory <init>  INFO: HHH000397: Using ASTQueryTranslatorFactory
+03/08/2016 23:49:13 org.hibernate.tool.hbm2ddl.SchemaUpdate execute  INFO: HHH000228: Running hbm2ddl schema update
+03/08/2016 23:49:13 org.hibernate.tool.hbm2ddl.SchemaUpdate execute  INFO: HHH000102: Fetching database metadata
+03/08/2016 23:49:13 org.hibernate.tool.hbm2ddl.SchemaUpdate execute  INFO: HHH000396: Updating schema
+03/08/2016 23:49:13 org.hibernate.tool.hbm2ddl.TableMetadata <init>  INFO: HHH000261: Table found: JPA2.DEPT
+03/08/2016 23:49:13 org.hibernate.tool.hbm2ddl.TableMetadata <init>  INFO: HHH000037: Columns: [loc, id, dname, deptno]
+03/08/2016 23:49:13 org.hibernate.tool.hbm2ddl.TableMetadata <init>  INFO: HHH000108: Foreign keys: []
+03/08/2016 23:49:13 org.hibernate.tool.hbm2ddl.TableMetadata <init>  INFO: HHH000126: Indexes: [sys_c004074]
+03/08/2016 23:49:13 org.hibernate.tool.hbm2ddl.TableMetadata <init>  INFO: HHH000261: Table found: JPA2.EMP
+03/08/2016 23:49:13 org.hibernate.tool.hbm2ddl.TableMetadata <init>  INFO: HHH000037: Columns: [ename, id, empno, job, hiredate, deptno, sal]
+03/08/2016 23:49:13 org.hibernate.tool.hbm2ddl.TableMetadata <init>  INFO: HHH000108: Foreign keys: [fk_o80tbt47iyjf6chp0d9n06tu2]
+03/08/2016 23:49:13 org.hibernate.tool.hbm2ddl.TableMetadata <init>  INFO: HHH000126: Indexes: [sys_c004078]
+03/08/2016 23:49:13 org.hibernate.tool.hbm2ddl.SchemaUpdate execute  INFO: HHH000232: Schema update complete
+03/08/2016 23:50:12 org.springframework.context.support.AbstractApplicationContext prepareRefresh  INFO: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@367b15e0: startup date [Wed Aug 03 23:50:12 BRT 2016]; root of context hierarchy
+03/08/2016 23:50:12 org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions  INFO: Loading XML bean definitions from class path resource [beans-jpa.xml]
+03/08/2016 23:50:12 org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor <init>  INFO: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+03/08/2016 23:50:12 org.springframework.orm.jpa.LocalEntityManagerFactoryBean createNativeEntityManagerFactory  INFO: Building JPA EntityManagerFactory for persistence unit 'AngularJavaEEBackend'
+03/08/2016 23:50:12 org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure  INFO: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+03/08/2016 23:50:12 org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure  INFO: HHH000115: Hibernate connection pool size: 20
+03/08/2016 23:50:12 org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure  INFO: HHH000006: Autocommit mode: true
+03/08/2016 23:50:12 org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure  INFO: HHH000401: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+03/08/2016 23:50:12 org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure  INFO: HHH000046: Connection properties: {user=JPA2, password=****, autocommit=true, release_mode=auto}
+03/08/2016 23:50:12 org.hibernate.dialect.Dialect <init>  INFO: HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+03/08/2016 23:50:12 org.hibernate.engine.jdbc.internal.LobCreatorBuilder useContextualLobCreation  INFO: HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+03/08/2016 23:50:12 org.hibernate.engine.transaction.internal.TransactionFactoryInitiator initiateService  INFO: HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+03/08/2016 23:50:12 org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory <init>  INFO: HHH000397: Using ASTQueryTranslatorFactory
+03/08/2016 23:50:12 org.hibernate.tool.hbm2ddl.SchemaUpdate execute  INFO: HHH000228: Running hbm2ddl schema update
+03/08/2016 23:50:12 org.hibernate.tool.hbm2ddl.SchemaUpdate execute  INFO: HHH000102: Fetching database metadata
+03/08/2016 23:50:12 org.hibernate.tool.hbm2ddl.SchemaUpdate execute  INFO: HHH000396: Updating schema
+03/08/2016 23:50:12 org.hibernate.tool.hbm2ddl.TableMetadata <init>  INFO: HHH000261: Table found: JPA2.DEPT
+03/08/2016 23:50:12 org.hibernate.tool.hbm2ddl.TableMetadata <init>  INFO: HHH000037: Columns: [loc, id, dname, deptno]
+03/08/2016 23:50:12 org.hibernate.tool.hbm2ddl.TableMetadata <init>  INFO: HHH000108: Foreign keys: []
+03/08/2016 23:50:12 org.hibernate.tool.hbm2ddl.TableMetadata <init>  INFO: HHH000126: Indexes: [sys_c004074]
+03/08/2016 23:50:12 org.hibernate.tool.hbm2ddl.TableMetadata <init>  INFO: HHH000261: Table found: JPA2.EMP
+03/08/2016 23:50:12 org.hibernate.tool.hbm2ddl.TableMetadata <init>  INFO: HHH000037: Columns: [ename, id, empno, job, hiredate, deptno, sal]
+03/08/2016 23:50:12 org.hibernate.tool.hbm2ddl.TableMetadata <init>  INFO: HHH000108: Foreign keys: [fk_o80tbt47iyjf6chp0d9n06tu2]
+03/08/2016 23:50:12 org.hibernate.tool.hbm2ddl.TableMetadata <init>  INFO: HHH000126: Indexes: [sys_c004078]
+03/08/2016 23:50:12 org.hibernate.tool.hbm2ddl.SchemaUpdate execute  INFO: HHH000232: Schema update complete
+03/08/2016 23:50:12 org.hibernate.ejb.internal.EntityManagerFactoryRegistry addEntityManagerFactory  WARN: HHH000436: Entity manager factory name (AngularJavaEEBackend) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+03/08/2016 23:50:12 org.springframework.context.support.AbstractApplicationContext prepareRefresh  INFO: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@36e52a2b: startup date [Wed Aug 03 23:50:12 BRT 2016]; root of context hierarchy
+03/08/2016 23:50:12 org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions  INFO: Loading XML bean definitions from class path resource [beans-jpa.xml]
+03/08/2016 23:50:12 org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor <init>  INFO: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+03/08/2016 23:50:12 org.springframework.orm.jpa.LocalEntityManagerFactoryBean createNativeEntityManagerFactory  INFO: Building JPA EntityManagerFactory for persistence unit 'AngularJavaEEBackend'
+03/08/2016 23:50:12 org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure  INFO: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+03/08/2016 23:50:12 org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure  INFO: HHH000115: Hibernate connection pool size: 20
+03/08/2016 23:50:12 org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure  INFO: HHH000006: Autocommit mode: true
+03/08/2016 23:50:12 org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure  INFO: HHH000401: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+03/08/2016 23:50:12 org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure  INFO: HHH000046: Connection properties: {user=JPA2, password=****, autocommit=true, release_mode=auto}
+03/08/2016 23:50:12 org.hibernate.dialect.Dialect <init>  INFO: HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+03/08/2016 23:50:12 org.hibernate.engine.jdbc.internal.LobCreatorBuilder useContextualLobCreation  INFO: HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+03/08/2016 23:50:12 org.hibernate.engine.transaction.internal.TransactionFactoryInitiator initiateService  INFO: HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+03/08/2016 23:50:12 org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory <init>  INFO: HHH000397: Using ASTQueryTranslatorFactory
+03/08/2016 23:50:12 org.hibernate.tool.hbm2ddl.SchemaUpdate execute  INFO: HHH000228: Running hbm2ddl schema update
+03/08/2016 23:50:12 org.hibernate.tool.hbm2ddl.SchemaUpdate execute  INFO: HHH000102: Fetching database metadata
+03/08/2016 23:50:12 org.hibernate.tool.hbm2ddl.SchemaUpdate execute  INFO: HHH000396: Updating schema
+03/08/2016 23:50:12 org.hibernate.tool.hbm2ddl.TableMetadata <init>  INFO: HHH000261: Table found: JPA2.DEPT
+03/08/2016 23:50:12 org.hibernate.tool.hbm2ddl.TableMetadata <init>  INFO: HHH000037: Columns: [loc, id, dname, deptno]
+03/08/2016 23:50:12 org.hibernate.tool.hbm2ddl.TableMetadata <init>  INFO: HHH000108: Foreign keys: []
+03/08/2016 23:50:12 org.hibernate.tool.hbm2ddl.TableMetadata <init>  INFO: HHH000126: Indexes: [sys_c004074]
+03/08/2016 23:50:12 org.hibernate.tool.hbm2ddl.TableMetadata <init>  INFO: HHH000261: Table found: JPA2.EMP
+03/08/2016 23:50:12 org.hibernate.tool.hbm2ddl.TableMetadata <init>  INFO: HHH000037: Columns: [ename, id, empno, job, hiredate, deptno, sal]
+03/08/2016 23:50:12 org.hibernate.tool.hbm2ddl.TableMetadata <init>  INFO: HHH000108: Foreign keys: [fk_o80tbt47iyjf6chp0d9n06tu2]
+03/08/2016 23:50:12 org.hibernate.tool.hbm2ddl.TableMetadata <init>  INFO: HHH000126: Indexes: [sys_c004078]
+03/08/2016 23:50:12 org.hibernate.tool.hbm2ddl.SchemaUpdate execute  INFO: HHH000232: Schema update complete
+03/08/2016 23:50:12 org.hibernate.ejb.internal.EntityManagerFactoryRegistry addEntityManagerFactory  WARN: HHH000436: Entity manager factory name (AngularJavaEEBackend) is already registered.  If entity manager will be clustered or passivated, specify a unique value for property 'hibernate.ejb.entitymanager_factory_name'
+03/08/2016 23:51:59 org.springframework.context.support.AbstractApplicationContext prepareRefresh  INFO: Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5f0d4581: startup date [Wed Aug 03 23:51:59 BRT 2016]; root of context hierarchy
+03/08/2016 23:52:00 org.springframework.beans.factory.xml.XmlBeanDefinitionReader loadBeanDefinitions  INFO: Loading XML bean definitions from class path resource [beans-jpa.xml]
+03/08/2016 23:52:00 org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor <init>  INFO: JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+03/08/2016 23:52:00 org.springframework.orm.jpa.LocalEntityManagerFactoryBean createNativeEntityManagerFactory  INFO: Building JPA EntityManagerFactory for persistence unit 'AngularJavaEEBackend'
+03/08/2016 23:52:00 org.hibernate.annotations.common.Version <clinit>  INFO: HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+03/08/2016 23:52:00 org.hibernate.Version logVersion  INFO: HHH000412: Hibernate Core {4.2.6.Final}
+03/08/2016 23:52:00 org.hibernate.cfg.Environment <clinit>  INFO: HHH000206: hibernate.properties not found
+03/08/2016 23:52:00 org.hibernate.cfg.Environment buildBytecodeProvider  INFO: HHH000021: Bytecode provider name : javassist
+03/08/2016 23:52:00 org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure  INFO: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+03/08/2016 23:52:00 org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure  INFO: HHH000115: Hibernate connection pool size: 20
+03/08/2016 23:52:00 org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure  INFO: HHH000006: Autocommit mode: true
+03/08/2016 23:52:00 org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure  INFO: HHH000401: using driver [oracle.jdbc.OracleDriver] at URL [jdbc:oracle:thin:@localhost:1521:xe]
+03/08/2016 23:52:00 org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure  INFO: HHH000046: Connection properties: {user=JPA2, password=****, autocommit=true, release_mode=auto}
+03/08/2016 23:52:01 org.hibernate.dialect.Dialect <init>  INFO: HHH000400: Using dialect: org.hibernate.dialect.Oracle10gDialect
+03/08/2016 23:52:01 org.hibernate.engine.jdbc.internal.LobCreatorBuilder useContextualLobCreation  INFO: HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+03/08/2016 23:52:01 org.hibernate.engine.transaction.internal.TransactionFactoryInitiator initiateService  INFO: HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+03/08/2016 23:52:01 org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory <init>  INFO: HHH000397: Using ASTQueryTranslatorFactory
+03/08/2016 23:52:01 org.hibernate.tool.hbm2ddl.SchemaUpdate execute  INFO: HHH000228: Running hbm2ddl schema update
+03/08/2016 23:52:01 org.hibernate.tool.hbm2ddl.SchemaUpdate execute  INFO: HHH000102: Fetching database metadata
+03/08/2016 23:52:01 org.hibernate.tool.hbm2ddl.SchemaUpdate execute  INFO: HHH000396: Updating schema
+03/08/2016 23:52:01 org.hibernate.tool.hbm2ddl.TableMetadata <init>  INFO: HHH000261: Table found: JPA2.DEPT
+03/08/2016 23:52:01 org.hibernate.tool.hbm2ddl.TableMetadata <init>  INFO: HHH000037: Columns: [loc, id, dname, deptno]
+03/08/2016 23:52:01 org.hibernate.tool.hbm2ddl.TableMetadata <init>  INFO: HHH000108: Foreign keys: []
+03/08/2016 23:52:01 org.hibernate.tool.hbm2ddl.TableMetadata <init>  INFO: HHH000126: Indexes: [sys_c004074]
+03/08/2016 23:52:01 org.hibernate.tool.hbm2ddl.TableMetadata <init>  INFO: HHH000261: Table found: JPA2.EMP
+03/08/2016 23:52:01 org.hibernate.tool.hbm2ddl.TableMetadata <init>  INFO: HHH000037: Columns: [ename, id, empno, job, hiredate, deptno, sal]
+03/08/2016 23:52:01 org.hibernate.tool.hbm2ddl.TableMetadata <init>  INFO: HHH000108: Foreign keys: [fk_o80tbt47iyjf6chp0d9n06tu2]
+03/08/2016 23:52:01 org.hibernate.tool.hbm2ddl.TableMetadata <init>  INFO: HHH000126: Indexes: [sys_c004078]
+03/08/2016 23:52:01 org.hibernate.tool.hbm2ddl.SchemaUpdate execute  INFO: HHH000232: Schema update complete
