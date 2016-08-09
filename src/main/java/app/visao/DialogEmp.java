@@ -89,15 +89,8 @@ public class DialogEmp extends JDialog implements ActionListener {
 	public void designaEmpregadoAFrame(Dept umDept) {
 		this.umDept = umDept;
 
-		nomeTextField.setText("");
-		numeroTextField.setText("");
-		jobsComboBox.setSelectedItem("");
+		
 		numeroDeptTextField.setText(Long.toString(umDept.getId()));
-
-		nomeMensagem.setText("");
-		jobMensagem.setText("");
-		numeroMensagem.setText("");
-		nomeDeptMensagem.setText("");
 
 	}
 
